@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hell 3D</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #ui { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 10px; }
+    #messages { position: absolute; bottom: 40px; left: 0; right: 0; max-height: 150px; overflow-y: scroll; list-style: none; margin: 0; padding: 0; }
+    #chatbox { position: absolute; bottom: 0; left: 0; right: 0; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <div id="auth">
+      <input id="username" placeholder="username">
+      <input id="password" type="password" placeholder="password">
+      <button id="login">Login</button>
+      <button id="register">Register</button>
+    </div>
+    <div id="account" style="display:none;">
+      User: <span id="user"></span> | Balance: <span id="balance"></span>
+      <button id="buy">Buy Ice Cream (10)</button>
+      <button id="logout">Logout</button>
+    </div>
+  </div>
+  <ul id="messages"></ul>
+  <div id="chatbox">
+    <input id="m" autocomplete="off" /><button id="send">Send</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
